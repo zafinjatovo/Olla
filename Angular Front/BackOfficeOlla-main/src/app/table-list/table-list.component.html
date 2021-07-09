@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12">
+          <div class="content">
+              <div class="title-content h-3">
+                  <h3 class="title">Offers</h3>
+              </div>
+              <div class="body-content">
+                  <div class="input-content" #containerInput>
+                    <div class="formOperator">
+                      <div class="opLabel">
+                        <label for="operatorSelected">Operator</label>
+                      </div>
+                      <div>
+                        <select name="country" [(ngModel)]="selectedOperator" (change)="GetOffersOperator()">
+                          <option *ngFor="let operator of operators" value={{operator.id}}>{{operator.name}}</option>
+                        </select>
+                      </div>
+                  </div>
+                </div>
+                <table id="table_detail">
+                  <thead>
+                      <tr>
+                          <th>Offer name</th>
+                          <th>Price</th>
+                          <th>Duration</th>
+                      </tr>
+                  </thead>
+                  <tbody *ngFor="let offer of this.offers; let i = index" (click)="show_hide_row('hidden_row' + i);">
+                      <tr>
+                        <td>{{offer.name}}</td>
+                        <td>{{offer.price}} arriary</td>
+                        <td>{{offer.duration}} days</td>
+                      </tr>
+                      <tr id="hidden_row{{i}}" class="hidden_row">
+                        <td colspan=4>
+                          <div class="row">
+
+                            <div class="col-4" *ngFor="let composant of offer.offerComposant" >
+                              <div class="composant">
+                                  <div class="composantHeader">
+                                    <h3>{{composant.type.name}}</h3>
+                                  </div>
+                                  <div class="composantBody">
+                                      <span class="spanD">value</span> : {{composant.value}} {{composant.type.unit}}<br>
+                                      <span class="spanD">intern</span> : {{composant.consumptionUnit}}<br>
+                                      <span class="spanD">extern</span> : {{composant.otherConsumptionUnit}}<br>
+                                  </div>
+                                  <div class="composantfooter">
+                                  </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+        </div>
+  </div>
+</div>

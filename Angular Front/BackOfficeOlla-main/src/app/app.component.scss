@@ -1,0 +1,80 @@
+.container-fluid{
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(230,228,255);
+    padding: 5px;
+    background: linear-gradient(90deg, rgba(230,228,255,1) 0%, rgba(1,228,157,1) 0%, rgba(0,212,255,1) 100%, rgba(0,212,255,1) 100%, rgba(0,212,255,1) 100%);
+}
+.loginComponent{
+   width: 100%;
+   min-height: 300px;
+   background-color: white;
+   border-radius:5px ;
+}
+.welcome-content{
+    transition:all 0.35s linear;
+    -webkit-transition:all 0.35s linear;
+    -moz-transition:all 0.35s linear;
+    -o-transition:all 0.35s linear;
+    transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+    -ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+    -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+    -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+    -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+    text-align: center;
+    width: 80%;
+    height: auto;
+    margin: 40% auto;
+    .admin-icon{
+        background: #ececec;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 6em;
+    }
+}
+.content-input{
+    text-align: center;
+    margin: 20% auto;
+    .wrap-input{
+        width: 70%;
+        height: 2.3em;
+        margin: 20px auto;
+        padding: 2px;
+        background-color: #ececec;
+        border-radius: 20px;
+        input{
+            width: 75%;
+            background: transparent;
+            border: 0px solid;
+            height: 2.4em;
+        }
+        input:focus {
+            outline:  none;
+        }
+        i{
+            font-size: 1.5em;
+            margin: 8px 10px 0px 0px;
+        }
+    }
+    button{
+        width: 40%;
+        height: 2.5em;
+        border-radius: 20px;
+        background: #01e49d;
+        color: white;
+        border: 0px solid;
+    }
+    button:focus{
+        outline: none;
+    }
+    button:hover{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .alert{
+        font-size: 11px;
+     color: #ffb45a;
+    }
+}

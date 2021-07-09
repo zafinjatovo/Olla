@@ -1,0 +1,145 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="row">
+                    <div class="col-7">
+                        <p>Trafic Appel</p>
+                        <p><b>{{statEntete.lastTraffic}} | {{statEntete.nowTrafic}}</b></p>
+                    </div>
+                    <div class="col-5">
+                        <div class="round b-blue">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            <i class="fa fa-calendar  c-red"></i>
+                            Last | Now Month
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="row">
+                    <div class="col-7">
+                        <p>New Users</p>
+                        <p><b>{{statEntete.lastUser}} | {{statEntete.nowUser}}</b></p>
+                    </div>
+                    <div class="col-5">
+                        <div class="round b-yellow">
+                            <i class="fa fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            <i class="fa fa-calendar  c-blue"></i>
+                            Last | Now Month
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="row">
+                    <div class="col-7">
+                        <p>Turnover</p>
+                        <p><b>{{statEntete.chiffreAffaireTotal}}</b></p>
+                    </div>
+                    <div class="col-5">
+                        <div class="round b-orange">
+                            <i class="fa fa-bank"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            <i class="fa fa-calendar c-yellow"></i>
+                           All Operators
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="content">
+                <div class="title-content h-3">
+                    <span><b>Offer</b></span>
+                    <br/>
+                    <i>
+                        <select class="select" [(ngModel)]="idOperator">
+                            <option *ngFor="let operator of operators" [value]="operator.id">{{operator.name}}</option>
+                        </select>
+                        <button (click)="updateColumDataChartOffer()"  class="btn-small b-blue">Change</button>
+                    </i>
+                </div>
+                <div class="body-content">
+                    <div id="container" [chart]="columChartOffer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="content">
+                <div class="title-content h-3">
+                    <span><b>Operator</b></span>
+                    <br/>
+                    <i></i>
+                </div>
+                <div class="body-content">
+                    <div id="container" [chart]="columChartOperator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="content">
+                <div class="title-content h-3">
+                    <span><b>Users</b></span>
+                    <br/>
+                    <i> 
+                        <select class="select" [(ngModel)]="idOperator">
+                            <option *ngFor="let operator of operators" [value]="operator.id">{{operator.name}}</option>
+                        </select>
+                        <input class="input-small" type="number" [(ngModel)]="top">
+                        <button (click)="updateDataUserChiffreAffaire()"  class="btn-small b-blue">Change</button>
+                    </i>
+                </div>
+                <div class="body-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Identity</th>
+                                <th>Name</th>
+                                <th>Firstname</th>
+                                <th>Email</th>
+                                <th>NCIN</th>
+                                <th>Turnover Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let userChiffreAffaire of listUserChiffreAffaire">
+                                <td>{{userChiffreAffaire.user["id"]}}</td>
+                                <td>{{userChiffreAffaire.user["name"]}}</td>
+                                <td>{{userChiffreAffaire.user["firstname"]}}</td>
+                                <td>{{userChiffreAffaire.user["email"]}}</td>
+                                <td>{{userChiffreAffaire.user["ncin"]}}</td>
+                                <td>{{userChiffreAffaire.chiffreAffaire}}</td>
+                            </tr>                       
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

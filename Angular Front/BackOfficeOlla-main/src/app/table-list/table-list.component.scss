@@ -1,0 +1,123 @@
+.formOperator
+{
+  display: inline-flex;
+}
+
+.opLabel
+{
+  margin-right: 20%;
+  margin-top: 10%;
+}
+
+select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 2% 10%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+th{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+body
+{
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:100%;
+ font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+}
+
+#wrapper
+{
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:995px;
+}
+
+#wrapper h1
+{
+ margin-top:50px;
+ font-size:45px;
+ color:#585858;
+}
+
+#wrapper h1 p
+{
+ font-size:20px;
+}
+
+#table_detail
+{
+ width:100%;
+ text-align:left;
+ border-collapse: collapse;
+ color:#2E2E2E;
+ border:#A4A4A4;
+}
+
+#table_detail tr:hover
+{
+ background-color:#F2F2F2;
+}
+
+#table_detail .hidden_row
+{
+ display:none;
+}
+
+.composant
+{
+  border: 1px solid gray;
+  border-radius: 3px;
+  text-align: center;
+  .composantHeader
+  {
+    background-color: #A4A4A4;
+    font-size: 20px;
+    padding: 2% 2% 2% 2%;
+  }
+  .composantBody
+  {
+    padding-bottom: 3%;
+    padding-top: 3%;
+  }
+
+  .spanD
+  {
+    color: #A4A4A4;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}

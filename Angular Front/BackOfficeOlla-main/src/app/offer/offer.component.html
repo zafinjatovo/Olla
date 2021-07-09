@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="content">
+                <div class="title-content h-3">
+                    <h3 class="title">Add new offer</h3>
+                </div>
+                <div class="body-content">
+                    <div class="input-content" #containerInput>
+                        <div class="row">
+                            <div class="col-6">
+                                <select class="input" [(ngModel)]="selectedOperator">
+                                    <option  *ngFor="let operator of operators" value="{{operator.id}}">{{operator.name}}</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <input class="input" type="text" [(ngModel)]="this.offerName" placeholder="Offer name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="number" class="input" [(ngModel)]="this.price" name="price" placeholder="Price" step="0.1">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="input" [(ngModel)]="this.duration" placeholder="Duree">
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let itemOffer of typeOffers">
+                            <div class="col-3">
+                                <label>
+                                    <span>{{itemOffer.name}}</span>
+                                    <input type="checkbox" [(ngModel)]="itemOffer.selected">
+                                </label>
+                            </div>
+                            <div class="col-9" [hidden]="itemOffer.selected == false">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <input type="text" [(ngModel)]="itemOffer.value" class="input" placeholder="Value">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text"  [(ngModel)]="itemOffer.unite" name="unite" class="input" placeholder="Unite">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" [(ngModel)]="itemOffer.uniteOther" name="uniteother" class="input" placeholder="Unite Other">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button (click)="AddNewOffer()" class="button button2" id="validNewOffer">
+                                Confirm
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

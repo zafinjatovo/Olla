@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="content">
+                <div class="title-content h-auto">
+                    <h3 class="title">Mobile Money</h3>
+                </div>
+                <div class="body-content">
+                        <table>
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th>Cash</th>
+                                    <th>User Name</th>
+                                    <th>User NCI</th>
+                                    <th>Date</th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let deposit of this.deposits;let i = index" style="text-align: center;">
+                                    <td>{{deposit.cash}}</td>
+                                    <td>{{deposit.user.name + " " + deposit.user.firstname}}</td>
+                                    <td>{{deposit.user.ncin}}</td>
+                                    <td>{{deposit.date.toLocaleString()}}</td>
+                                    <td>
+                                        <button class="button button2" (click)="ValidateDeposit(deposit.id, i);" id={{i}}>
+                                            accept
+                                        </button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+  function load()
+  {
+
+  }
+</script>
